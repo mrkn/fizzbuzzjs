@@ -2,6 +2,13 @@ current_number = 0
 score = 0
 beatbox = new Beatbox()
 
+incorrect_sound = T("audio").loadthis("/assets/Basso.wav")
+incorrect_sound.set({bang: false, mul: 2.0})
+incorrect_sound.on('ended', ->
+  this.pause()
+  this.bang()
+)
+
 fizzbuzz = (number) ->
   fizz = if number % 3 == 0 then 'fizz' else ''
   buzz = if number % 5 == 0 then 'buzz' else ''
@@ -51,6 +58,7 @@ correct = ->
 incorrect = ->
   $('body').addClass('incorrect')
   $('body').removeClass('correct')
+  incorrect_sound.play()
 
 showScore = ->
   $('#score').text('Score:  ' + score)
