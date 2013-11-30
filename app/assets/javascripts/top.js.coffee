@@ -2,11 +2,20 @@ current_number = 0
 score = 0
 beatbox = new Beatbox()
 
-incorrect_sound = T("audio").loadthis("/assets/Basso.wav")
-incorrect_sound.set({bang: false, mul: 2.0})
-incorrect_sound.on('ended', ->
+correct_sound = T("audio").loadthis("/assets/correct.wav")
+correct_sound.on('ended', ->
   this.pause()
   this.bang()
+)
+
+incorrect_sound = T("audio").loadthis("/assets/Basso.wav")
+incorrect_sound.set({bang: false, mul: 2.0})
+
+[ correct_sound, incorrect_sound ].forEach((snd) ->
+  snd.on('ended', ->
+    this.pause()
+    this.bang()
+  )
 )
 
 fizzbuzz = (number) ->
@@ -54,6 +63,7 @@ correct = ->
 
   $('body').addClass('correct')
   $('body').removeClass('incorrect')
+  correct_sound.play()
 
 incorrect = ->
   $('body').addClass('incorrect')
