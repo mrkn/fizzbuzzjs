@@ -32,6 +32,7 @@ start = ->
   changeCurrentNumber()
 
 gameover = ->
+  beatbox.stop()
   showScoreContainer()
 
 changeCurrentNumber = ->
