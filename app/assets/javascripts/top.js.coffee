@@ -1,3 +1,5 @@
+current_number = 0
+
 fizzbuzz = (number) ->
   fizz = if number % 3 == 0 then 'fizz' else ''
   buzz = if number % 5 == 0 then 'buzz' else ''
@@ -18,7 +20,7 @@ init = ->
     else
       incorrect()
 
-    changeNumber()
+    changeCurrentNumber()
   )
 
   $('#number-container').hide()
@@ -29,9 +31,9 @@ start = ->
 
   changeNumber()
 
-changeNumber = ->
-  num = 1 + parseInt(Math.random()*100)
-  $('#placeholder').text(num)
+changeCurrentNumber = ->
+  current_number = 1 + parseInt(Math.random()*100)
+  $('#placeholder').text(current_number)
 
 correct = ->
   $('body').addClass('correct')
