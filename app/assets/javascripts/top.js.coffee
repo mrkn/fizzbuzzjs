@@ -1,4 +1,5 @@
 current_number = 0
+score = 0
 beatbox = new Beatbox()
 
 fizzbuzz = (number) ->
@@ -10,9 +11,8 @@ judge = (type) ->
   return fizzbuzz(current_number) is type
 
 init = ->
-  $('#start').click(->
+  $('#start, #restart').click(->
     start()
-    setTimeout(gameover, 3000)
   )
 
   $('#fizz, #buzz, #fizzbuzz, #other').click(->
@@ -27,12 +27,15 @@ init = ->
   showStartContainer()
 
 start = ->
+  score = 0
   beatbox.start()
   showNumberContainer()
   changeCurrentNumber()
+  setTimeout(gameover, 3000)
 
 gameover = ->
   beatbox.stop()
+  showScore()
   showScoreContainer()
 
 changeCurrentNumber = ->
@@ -40,12 +43,17 @@ changeCurrentNumber = ->
   $('#placeholder').text(current_number)
 
 correct = ->
+  score += current_number
+
   $('body').addClass('correct')
   $('body').removeClass('incorrect')
 
 incorrect = ->
   $('body').addClass('incorrect')
   $('body').removeClass('correct')
+
+showScore = ->
+  $('#score').text('Score:  ' + score)
 
 showStartContainer = ->
   $('#start-container').show()
