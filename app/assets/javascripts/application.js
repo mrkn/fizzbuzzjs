@@ -13,4 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap/bootstrap.min
+//= require timbre
+//= require subcollider-min
+//= require MoogFF
 //= require_tree .

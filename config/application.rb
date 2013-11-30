@@ -13,6 +13,8 @@ Bundler.require(:default, Rails.env)
 
 module Fizzbuzzjs
   class Application < Rails::Application
+    config.assets.precompile << Rails.root.join('assets/audios')
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
