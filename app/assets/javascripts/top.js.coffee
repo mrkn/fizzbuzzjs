@@ -36,16 +36,19 @@ init = ->
   )
 
   showStartContainer()
+  disableControllers()
 
 start = ->
   score = 0
   beatbox.start()
+  enableControllers()
   showNumberContainer()
   changeCurrentNumber()
   setTimeout(gameover, 30 * 1000)
 
 gameover = ->
   beatbox.stop()
+  disableControllers()
   showScore()
   showScoreContainer()
 
@@ -84,6 +87,12 @@ showScoreContainer = ->
   $('#start-container').hide()
   $('#number-container').hide()
   $('#score-container').show()
+
+disableControllers = ->
+  $('.controllers .btn').attr('disabled', 'disabled')
+
+enableControllers = ->
+  $('.controllers .btn').removeAttr('disabled')
 
 jQuery ->
   $(document).ready(->
