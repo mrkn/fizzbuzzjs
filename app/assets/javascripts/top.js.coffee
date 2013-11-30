@@ -4,10 +4,7 @@ fizzbuzz = (number) ->
   return fizz + buzz
 
 judge = (type) ->
-  if type is 'fizz'
-    correct()
-  else
-    incorrect()
+  return type is 'fizz'
 
 init = ->
   $('#start').click(->
@@ -16,7 +13,11 @@ init = ->
   )
 
   $('#fizz, #buzz, #fizzbuzz, #other').click(->
-    judge(this.id)
+    if judge(this.id)
+      correct()
+    else
+      incorrect()
+
     changeNumber()
   )
 
