@@ -1,4 +1,5 @@
 current_number = 0
+beatbox = new Beatbox()
 
 fizzbuzz = (number) ->
   fizz = if number % 3 == 0 then 'fizz' else ''
@@ -28,6 +29,7 @@ init = ->
 
 start = ->
   $('#number-container').show()
+  beatbox.start()
 
   changeCurrentNumber()
 
