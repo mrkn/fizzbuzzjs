@@ -1,7 +1,7 @@
 function Beatbox() {
   var self = this;
 
-  this.audio = T("audio").load("/assets/drumkit.wav", function() {
+  this.audio = T("audio").load("/audios/drumkit.wav", function() {
     var BD  = this.slice(   0,  500).set({bang:false});
     var SD  = this.slice( 500, 1000).set({bang:false});
     var HH1 = this.slice(1000, 1500).set({bang:false, mul:0.2});

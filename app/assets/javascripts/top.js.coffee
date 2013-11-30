@@ -2,8 +2,8 @@ current_number = 0
 score = 0
 beatbox = new Beatbox()
 
-correct_sound = T("audio").loadthis("/assets/correct.wav")
-incorrect_sound = T("audio").loadthis("/assets/incorrect.wav")
+correct_sound = T("audio").loadthis("/audios/correct.wav")
+incorrect_sound = T("audio").loadthis("/audios/incorrect.wav")
 incorrect_sound.set({bang: false, mul: 2.8})
 
 [ correct_sound, incorrect_sound ].forEach((snd) ->
