@@ -4,12 +4,19 @@ init = ->
     start()
   )
 
+  $('#fizz, #buzz, #fizzbuzz, #other').click(->
+    changeNumber()
+  )
+
   $('#number').hide()
   $('#score').hide()
 
 start = ->
   $('#number').show()
 
+  changeNumber()
+
+changeNumber = ->
   num = 1 + parseInt(Math.random()*100)
   $('#placeholder').text(num)
 
