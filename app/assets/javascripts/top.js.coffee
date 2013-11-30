@@ -3,11 +3,6 @@ score = 0
 beatbox = new Beatbox()
 
 correct_sound = T("audio").loadthis("/assets/correct.wav")
-correct_sound.on('ended', ->
-  this.pause()
-  this.bang()
-)
-
 incorrect_sound = T("audio").loadthis("/assets/incorrect.wav")
 incorrect_sound.set({bang: false, mul: 2.8})
 
