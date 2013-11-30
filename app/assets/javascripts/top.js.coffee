@@ -29,7 +29,7 @@ init = ->
 start = ->
   $('#number-container').show()
 
-  changeNumber()
+  changeCurrentNumber()
 
 changeCurrentNumber = ->
   current_number = 1 + parseInt(Math.random()*100)
