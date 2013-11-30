@@ -61,6 +61,8 @@ correct = ->
   correct_sound.play()
 
 incorrect = ->
+  score -= current_number
+
   $('body').addClass('incorrect')
   $('body').removeClass('correct')
   incorrect_sound.play()
