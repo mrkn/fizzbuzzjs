@@ -89,10 +89,10 @@ showScoreContainer = ->
   $('#score-container').show()
 
 disableControllers = ->
-  $('.controllers .btn').attr('disabled', 'disabled')
+  $('.controllers .cntl').attr('disabled', 'disabled')
 
 enableControllers = ->
-  $('.controllers .btn').removeAttr('disabled')
+  $('.controllers .cntl').removeAttr('disabled')
 
 jQuery ->
   $(document).ready(->
