@@ -11,8 +11,8 @@ judge = (type) ->
 
 init = ->
   $('#start').click(->
-    $('#start-container').hide()
     start()
+    setTimeout(gameover, 3000)
   )
 
   $('#fizz, #buzz, #fizzbuzz, #other').click(->
@@ -24,14 +24,15 @@ init = ->
     changeCurrentNumber()
   )
 
-  $('#number-container').hide()
-  $('#score-container').hide()
+  showStartContainer()
 
 start = ->
-  $('#number-container').show()
   beatbox.start()
-
+  showNumberContainer()
   changeCurrentNumber()
+
+gameover = ->
+  showScoreContainer()
 
 changeCurrentNumber = ->
   current_number = 1 + parseInt(Math.random()*100)
@@ -44,6 +45,21 @@ correct = ->
 incorrect = ->
   $('body').addClass('incorrect')
   $('body').removeClass('correct')
+
+showStartContainer = ->
+  $('#start-container').show()
+  $('#number-container').hide()
+  $('#score-container').hide()
+
+showNumberContainer = ->
+  $('#start-container').hide()
+  $('#number-container').show()
+  $('#score-container').hide()
+
+showScoreContainer = ->
+  $('#start-container').hide()
+  $('#number-container').hide()
+  $('#score-container').show()
 
 jQuery ->
   $(document).ready(->
