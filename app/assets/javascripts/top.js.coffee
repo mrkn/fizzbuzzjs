@@ -3,10 +3,10 @@ current_number = 0
 fizzbuzz = (number) ->
   fizz = if number % 3 == 0 then 'fizz' else ''
   buzz = if number % 5 == 0 then 'buzz' else ''
-  return fizz + buzz
+  return fizz + buzz || 'other'
 
 judge = (type) ->
-  return type is 'fizz'
+  return fizzbuzz(current_number) is type
 
 init = ->
   $('#start').click(->
