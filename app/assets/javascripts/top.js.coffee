@@ -42,7 +42,7 @@ start = ->
   beatbox.start()
   showNumberContainer()
   changeCurrentNumber()
-  setTimeout(gameover, 3000)
+  setTimeout(gameover, 30 * 1000)
 
 gameover = ->
   beatbox.stop()
