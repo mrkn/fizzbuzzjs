@@ -1,3 +1,14 @@
+$correct: #A6E39D;
+$incorrect: #EAA8BF;
+
+.correct {
+  background-color: $correct;
+}
+
+.incorrect {
+  background-color: $incorrect;
+}
+
 .main {
   height: 400px;
 }
