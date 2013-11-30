@@ -1,6 +1,6 @@
 init = ->
   $('#start').click(->
-    $('#start').hide()
+    $('#start-container').hide()
     start()
   )
 
@@ -9,11 +9,11 @@ init = ->
     changeNumber()
   )
 
-  $('#number').hide()
-  $('#score').hide()
+  $('#number-container').hide()
+  $('#score-container').hide()
 
 start = ->
-  $('#number').show()
+  $('#number-container').show()
 
   changeNumber()
 
