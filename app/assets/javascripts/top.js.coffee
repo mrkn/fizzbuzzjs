@@ -1,3 +1,14 @@
+fizzbuzz = (number) ->
+  fizz = if number % 3 == 0 then 'fizz' else ''
+  buzz = if number % 5 == 0 then 'buzz' else ''
+  return fizz + buzz
+
+judge = (type) ->
+  if type is 'fizz'
+    correct()
+  else
+    incorrect()
+
 init = ->
   $('#start').click(->
     $('#start-container').hide()
@@ -21,12 +32,6 @@ changeNumber = ->
   num = 1 + parseInt(Math.random()*100)
   $('#placeholder').text(num)
 
-judge = (type) ->
-  if type is 'fizz'
-    correct()
-  else
-    incorrect()
-
 correct = ->
   $('body').addClass('correct')
   $('body').removeClass('incorrect')
@@ -34,11 +39,6 @@ correct = ->
 incorrect = ->
   $('body').addClass('incorrect')
   $('body').removeClass('correct')
-
-fizzbuzz = (number) ->
-  fizz = if number % 3 == 0 then 'fizz' else ''
-  buzz = if number % 5 == 0 then 'buzz' else ''
-  return fizz + buzz
 
 jQuery ->
   $(document).ready(->
