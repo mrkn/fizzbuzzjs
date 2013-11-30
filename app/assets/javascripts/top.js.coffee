@@ -9,7 +9,7 @@ correct_sound.on('ended', ->
 )
 
 incorrect_sound = T("audio").loadthis("/assets/incorrect.wav")
-incorrect_sound.set({bang: false, mul: 2.0})
+incorrect_sound.set({bang: false, mul: 2.8})
 
 [ correct_sound, incorrect_sound ].forEach((snd) ->
   snd.on('ended', ->
